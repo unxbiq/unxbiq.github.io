@@ -322,7 +322,7 @@ $(document).ready(function() {
 // FILE IMAGE JSON khusus WALLPAPER
   $(document).ready(function(){
   //mengambil data dari file json
-  $.getJSON("../c/Squy-Kw/Kanton/Jagal/Babi/X/image.json", function(data){
+  $.getJSON("../Squy-Kw/Kanton/Jagal/Babi/X/image.json", function(data){
     //mengulang setiap elemen data
     $.each(data, function(i, item){
       //mengambil elemen img dengan id sesuai dengan nama foto
