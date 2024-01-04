@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 // Parsing JSON dan menampilkan teks
                 var data = JSON.parse(xhr.responseText);
-                document.querySelector('.tekss24').textContent = data[0].teks1;
+                document.querySelector('.tekss24').textContent = data[0].tekss24;
             }
         };
 
