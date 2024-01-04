@@ -292,12 +292,12 @@ $(document).ready(function() {
       // Menggunakan jQuery untuk memuat dan menampilkan teks dari file JSON
       $.getJSON('HD-injection.json', function(data) {
         // Memastikan file JSON memiliki format yang diharapkan
-        if (Array.isArray(data) && data.length > 0 && data[0].teksu) {
+        if (Array.isArray(data) && data.length > 0 && data[0].teksou) {
           //$('.xzc').text(data[0].teksu);
           //$('.xzoc').text(data[0].teksuu);
-          $('#dep').text(data[0].desktop);
-          $('.spasi').text(data[0].spasi);
-          $('.tekss24').text(data[0].teksjam);
+          $('#deop').text(data[0].desktop);
+          $('.spasio').text(data[0].spasi);
+          $('.tekss24o').text(data[0].teksjam);
         } else {
           console.error('! Format JSON tidak sesuai.');
         }
