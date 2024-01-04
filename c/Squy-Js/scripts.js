@@ -290,7 +290,7 @@ function getData() {
 // TEKS SUMBER FILE json | DIPAKAI
 $(document).ready(function() {
       // Menggunakan jQuery untuk memuat dan menampilkan teks dari file JSON
-      $.getJSON('../Jagal/B/X/image.json', function(data) {
+      $.getJSON('image.json', function(data) {
         // Memastikan file JSON memiliki format yang diharapkan
         if (Array.isArray(data) && data.length > 0 && data[0].teksu) {
           //$('.xzc').text(data[0].teksu);
