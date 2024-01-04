@@ -1,0 +1,785 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+:root {
+  --colorIOX: rgb(31, 70, 145);
+  --colorBtn: #363FFC;
+}
+
+.contente .iklansus {
+  width: 95%;
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contente .iklansus .iklansu {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 
+  3.8px 4.8px 9px rgba(0,0,0,0.10),
+  -3.8px 4.8px 9px rgba(0,0,0,0.10);
+  border: 0.85px solid #fff;
+}
+.iklansu .iklans {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.iklansu .iklans .ikl {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.contente .jdl {
+  font-family: 'Noto Sans', sans-serif;
+  width: 98%;
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-bottom: 24px;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+.contente .jdl .jd {
+  color: #000;
+  text-align: left;
+  background-size: 20px;
+  margin-bottom: 1px;
+}
+.jdl > div {
+  width: 30px;
+  height: 2px;
+  background-color: var(--colorIOX);
+  border-radius: 50px;
+}
+
+/* WALLPAPER */
+.contente .jdl0 {
+  font-family: 'Noto Sans', sans-serif;
+  width: 98%;
+  margin-top: 16px;
+  margin-left: 10px;
+  margin-bottom: 24px;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+.contente .jdl0 .jd {
+  color: #000;
+  text-align: left;
+  background-size: 20px;
+  margin-bottom: 1px;
+}
+.jdl0 > div {
+  width: 44px;
+  height: 2px;
+  background-color: rgb(31, 70, 145);
+  border-radius: 50px;
+}
+
+
+/* teks24jam */
+.bg_teks24 {
+  font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 5px 14px 15px 14px;
+  margin: 15px 10px 0 10px;
+}
+.bg_teks24 .bg24 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  padding: 4px 0 4px 0;
+  font-size: 15px;
+  touch-action: pan-y;
+  background-color: hsl(219, 68%, 90%);
+  color: #363FFC /*hsl(0,0%,50%)*/;
+  border-radius: 10px;
+  box-shadow: 
+  3.8px 4.8px 9px rgba(0,0,0,0.04),
+  -3.8px 4.8px 9px rgba(0,0,0,0.04);
+  border: 0.85px solid hsl(219, 68%, 95%);
+}
+.bg_teks24 .bg24 > ion-icon {
+  padding: 4px;
+  rotate: -10deg;
+  margin-left: 9px;
+  background-color: hsl(219, 68%, 80%);
+  font-size: 25px;
+  color: hsl(219, 68%, 60%);
+  border-radius: 10px;
+}
+.bg_teks24 .bg24 .paddings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0 8px 0 6px;
+  overflow: hidden;
+}
+.bg_teks24 .bg24 .paddings #teks24jam {
+  width: auto;
+  height: 100%;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+/* display: inline-block;*/
+ animation: scrollText 20s linear infinite;
+ user-select: none;
+ transition: transform 0.3s ease-in-out;
+ padding: 10px;
+ margin: 0;
+}
+.bg_teks24.grabbing .bg24 .paddings #teks24jam {
+  animation-play-state: paused;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%)
+  }
+}
+.bg24 .paddings #teks24jam > div {
+  display: flex;
+}
+.bg24 .paddings #teks24jam .spasi {
+  color: hsl(0,0%,50%);
+  margin-left: 6px;
+}
+.bg24 .paddings #teks24jam .teks24 {
+  color: #363FFC;
+  margin-left: 6px;
+}
+.bg24 .paddings #teks24jam .tekss24 {
+  color: hsl(0,0%,35%) !important;
+  margin-left: 6px;
+}
+.bg24 .paddings #teks24jam .kurung {
+  color: hsl(0,0%,50%);
+  margin-left: 6px;
+}
+
+
+
+.contente .panned {
+  text-decoration: none;
+  min-width: 98.5%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.panned .pan {
+  font-family: 'Noto Sans', sans-serif;
+  width: 65%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-left: 5px;
+}
+.pan .in {
+  margin-top: 0;
+  font-size: 12.5px;
+  color: #6a6a6a;
+  display: flex;
+  align-items: center;
+}
+.in > p {
+  color: #121212;
+  font-size: 12.5px;
+  margin-left: 2px;
+}
+.pan .in0 {
+  font-family: 'Poppins', sans-serif !important;
+  margin-top: 10px;
+  color: #000;
+  font-size: 20.5px;
+  margin-bottom: 23px;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+.pan .in0:hover {
+  color: var(--colorIOX);
+}
+.pan .de {
+  margin-top: auto;
+  font-size: 12.5px;
+  color: #6a6a6a;
+  display: flex;
+  align-items: center;
+}
+.pan .de > ion-icon {
+  color: #6a6a6a;
+  margin-right: 6px;
+  font-size: 15.5px;
+}
+.panned .ijd {
+  position: relative;
+  left: 0;
+  width: 35%;
+  height: 100px;
+  margin: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: .4px solid rgba(225,225,225,0.1);
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.2);
+}
+.ijd > img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  user-select: none;
+  cursor: pointer;
+}
+body .topso {
+  position: fixed;
+	bottom: 25px;
+	right: 25px;
+	border-radius: 8px;
+  padding: 13px;
+  background-color: var(--colorIOX);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index:997;
+  opacity: 0;
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.38);
+}
+.topso > ion-icon {
+  color: #fff;
+  font-size: 23px;
+}
+
+
+/*
+================================
+SEARCH PENCARIAN WALLPAPER 
+*/
+.caris {
+  position: absolute;
+  right: 38px;
+  width: 55%;
+  padding: 6.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 44px;
+  background: #fff;
+  border: 1px solid rgb(31, 70, 145,0.8);
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: text;
+  transition: 0.5s;
+}
+.caris:hover {
+  border-color: #141414;
+}
+.caris:hover svg.line {
+  stroke: #141414 !important;
+}
+.caris:hover #inputs::placeholder {
+  color: rgb(20,20,20, .4) !important;
+}
+.caris #inputs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  padding: 8.5px 8.5px 8.5px 7px;
+  background: transparent;
+  outline: none;
+  outline-color: none;
+  border: none;
+}
+.caris #inputs::placeholder {
+  color: rgb(31, 70, 145, .4);
+  font-family: 'Noto Sans', sans-serif;
+}
+.caris > svg.line {
+  fill: none;
+  width: 40px;
+  height: 40px;
+  padding: 6.75px 8.5px;
+  stroke: var(--colorIOX);
+  border-radius: 10px;
+  margin-left: 6.5px !important;
+  margin: 0;
+  transition: 0.5s;
+}
+.ponsive .notresult {
+  display: none;
+  width: 100%;
+  padding: 30px;
+  color: hsl(0,0%,50%);
+  text-align: center;
+}
+
+.caris #inputs:placeholder-shown:focus::placeholder,
+.caris #inputs:focus::placeholder,
+.carisp #inputsp:placeholder-shown:focus::placeholder,
+.carisp #inputsp:focus::placeholder {
+  color: rgb(20,20,20, .4);
+}
+
+
+/*
+================================
+SEARCH PENCARIAN FOTO PROFIL
+*/
+.carisp {
+  position: absolute;
+  right: 38px;
+  width: 55%;
+  padding: 6.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 44px;
+  background: #fff;
+  border: 1px solid rgb(31, 70, 145,0.8);
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: text;
+  transition: 0.5s;
+}
+.carisp:hover {
+  border-color: #141414;
+}
+.carisp:hover svg.line {
+  stroke: #141414 !important;
+}
+.carisp:hover #inputsp::placeholder {
+  color: rgb(20,20,20, .4) !important;
+}
+.carisp #inputsp {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  padding: 8.5px 8.5px 8.5px 7px;
+  background: transparent;
+  outline: none;
+  outline-color: none;
+  border: none;
+}
+.carisp #inputsp::placeholder {
+  color: rgb(31, 70, 145, .4);
+  font-family: 'Noto Sans', sans-serif;
+}
+.carisp > svg.line {
+  fill: none;
+  width: 40px;
+  height: 40px;
+  padding: 6.75px 8.5px;
+  stroke: var(--colorIOX);
+  border-radius: 10px;
+  margin-left: 6.5px !important;
+  margin: 0;
+  transition: 0.5s;
+}
+.ponsive .notresultp {
+  display: none;
+  width: 100%;
+  padding: 30px;
+  color: hsl(0,0%,50%);
+  text-align: center;
+}
+
+
+
+.contente .kembalis {
+  font-family: 'Noto Sans', sans-serif;
+  width: 97%;
+  margin-top: 9px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 12.5px;
+}
+.contente .kembalis .kembalis1 {
+  color: #6a6a6a;
+  text-decoration: none;
+}
+.contente .kembalis .kembalis2 {
+  color: #6a6a6a;
+  margin-left: 6.5px;
+}
+.contente .kembalis .kembalis3 {
+  color: #444444;
+  margin-left: 6.5px;
+  font-size: 15px !important;
+}
+
+
+/* WALLPAPER */
+.contente .ponsive {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: /*space-around*/ center;
+  align-items: center;
+  /*gap: 5px;*/
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.ponsive .wollpaper {
+  flex: 0 0 calc(45% - 0px);
+  position: relative;
+  margin: 10px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.3);
+}
+.sems {
+  display: none;
+}
+.ponsive .wollpaper > img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none; 
+  user-select: none;
+}
+.ponsive .wollpaper .btn_downloads {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  padding: 10px 13px;
+  background-color: var(--colorBtn);
+  color: #fff;
+  border: 2.3px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.ponsive .wollpaper .btn_downloads #tombold {
+  font-size: 22px;
+}
+.wollpaper .btn_downloads #tomboldw {
+  display: none;
+}
+.btn_downloads:hover {
+  background-color: #fff !important;
+  color: var(--colorBtn) !important;
+  border: 2.3px solid #fff !important;
+}
+.btn_downloads:hover #tombold {
+  display: none;
+}
+.btn_downloads:hover #tomboldw {
+  display: block;
+  font-size: 22px;
+}
+
+/* FOTO PROFIL */
+.contente .ponsive {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: /*space-around*/ center;
+  align-items: center;
+  /*gap: 5px;*/
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.ponsive .fP {
+  flex: 0 0 calc(45% - 0px);
+  position: relative;
+  margin: 10px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.3);
+}
+.ponsive .fP > img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none; 
+  user-select: none;
+}
+.ponsive .fP .btn_downloadsp {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  padding: 10px 13px;
+  background-color: var(--colorBtn);
+  color: #fff;
+  border: 2.3px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.ponsive .fP .btn_downloadsp #tombold {
+  font-size: 22px;
+}
+.fP .btn_downloadsp #tomboldw {
+  display: none;
+}
+.btn_downloadsp:hover {
+  background-color: #fff !important;
+  color: var(--colorBtn) !important;
+  border: 2.3px solid #fff !important;
+}
+.btn_downloadsp:hover #tombold {
+  display: none;
+}
+.btn_downloadsp:hover #tomboldw {
+  display: block;
+  font-size: 22px;
+}
+
+/*
+================================
+SEARCH PENCARIAN Dw 
+*/
+.carisde {
+  margin-top: 50px;
+  width: 100%;
+ /* background: pink;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.carisde .carisd {
+  width: 76%;
+  padding: 6.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(219, 68%, 90%);
+  border: 1px solid rgb(84,132,222, .3);
+  box-shadow: 2px 2px 7px rgba(0,0,0,.1);
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: text;
+  transition: 0.5s;
+}
+.carisde .carisd:hover {
+  border-color: hsl(219, 68%, 60%);
+}
+.carisde .carisd:hover svg.line {
+  stroke: hsl(219, 68%, 60%) !important;
+}
+.carisde .carisd #searchDe:placeholder-shown:focus::placeholder,
+.carisde .carisd #searchDe:focus::placeholder {
+  background: transparent;
+  color: rgb(84,132,222, .3) !important;
+}
+
+.carisde .carisd:hover #searchDe::placeholder {
+  color: rgb(84,132,222, .3) !important;
+}
+.carisde .carisd #searchDe {
+  font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  background: transparent;
+  color: hsl(219, 68%, 60%);
+  align-items: center;
+  width: 100%;
+  font-size: 17.8px;
+  border-radius: 10px;
+  padding: 8.5px 8.5px 8.5px 7px;
+  outline: none;
+  outline-color: none;
+  border: none;
+}
+.carisde .carisd #searchDe::placeholder {
+  color: rgb(84,132,222, .3);
+  font-family: 'Noto Sans', sans-serif;
+}
+.carisde .carisd > svg.line {
+  fill: none;
+  width: 50px;
+  height: 50px;
+  padding: 6.75px 8.5px;
+  stroke: rgb(84,132,222, .4);
+  border-radius: 10px;
+  margin-left: 6px !important;
+  margin: 0;
+  transition: 0.5s;
+}
+
+.contente .ponsived {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: /*space-around*/ center;
+  align-items: center;
+  /*gap: 5px;*/
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.ponsived .dw {
+  flex: 0 0 calc(90% - 0px);
+  position: relative;
+  margin: 10px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.3);
+}
+.ponsived .dw > video {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.ponsived .dwv {
+  pointer-events: none; 
+  user-select: none;
+}
+.ponsived .dw > img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none; 
+  user-select: none;
+}
+.ponsived .notsresult {
+  font-family: 'Noto Sans', sans-serif;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 4px;
+  margin-top: -10px;
+  color: hsl(360,68%,50%);
+}
+.ponsived .notsresult > .dx {
+  display: flex;
+  align-items: center;
+  padding: 5px 5px 5px 9px; background: rgb(215,43,43, .08);
+  border: 0.1px solid hsl(360,68%,60%);
+  border-radius: 7px;
+  min-width: 55%;
+}
+ponsived .notsresult .dx > p {
+  padding: 5px;
+}
+.ponsived .notsresult .dx > ion-icon {
+  margin-top: 1px;
+  margin-right: .9px;
+  font-size: 26px;
+  margin-left: auto;
+  padding: 3.5px 5px;
+  margin-left: 15px;
+  border-radius: 4px;
+  background-color: rgb(215,43,43, .09);
+  color: hsl(360,68%,55%);
+}
+/*
+.ponsived > svg {
+  fill:none;stroke: yellow;opacity:.8;
+  width: 40px;
+  height: 40px;
+}*/
+
+
+
+/*
+==============
+NOTIFIKASI 
+==============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+.contente .ponsiven {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  /*font-family: 'Noto Sans', sans-serif;*/
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: /*space-around*/ center;
+  align-items: center;
+  /*gap: 5px;*/
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 17px;
+}
+.ponsiven .noti {
+  display: flex;
+  width: 95%;
+  position: relative;
+  margin: 10px;
+  padding: 13px 13px 13px 15px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.07);
+  background-color: #fff;
+}
+.ponsiven .noti .bol {
+  width: auto;
+  height: 100%;
+  display: flex; flex-direction: column;
+  justify-content: left;
+  align-items: center;
+}
+.ponsiven .noti .bol .boll {
+  padding: 10px;
+  margin-top: 2px;
+  background-color: hsl(0,0%,80%);
+  border-radius: 100%;
+}
+.ponsiven .noti .p {
+  width: 100%;
+  height: 100%;
+  margin-left: 10px;
+  color: #0C172D;
+}
+.ponsiven .noti .p a {
+  text-decoration: none;
+  color: #363FFC;
+  margin-left: 3.5px;
+  margin-right: 3.5px;
+}
