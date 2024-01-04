@@ -290,7 +290,7 @@ function getData() {
 // TEKS SUMBER FILE json | DIPAKAI
 $(document).ready(function() {
       // Menggunakan jQuery untuk memuat dan menampilkan teks dari file JSON
-      $.getJSON('image.json', function(data) {
+      $.getJSON('../c/Squy-Kw/Kanton/Jagal/Babi/X/image.json', function(data) {
         // Memastikan file JSON memiliki format yang diharapkan
         if (Array.isArray(data) && data.length > 0 && data[0].teksu) {
           //$('.xzc').text(data[0].teksu);
@@ -322,7 +322,7 @@ $(document).ready(function() {
 // FILE IMAGE JSON khusus WALLPAPER
   $(document).ready(function(){
   //mengambil data dari file json
-  $.getJSON("image.json", function(data){
+  $.getJSON("../c/Squy-Kw/Kanton/Jagal/Babi/X/image.json", function(data){
     //mengulang setiap elemen data
     $.each(data, function(i, item){
       //mengambil elemen img dengan id sesuai dengan nama foto
@@ -341,7 +341,7 @@ $(document).ready(function() {
 // FILE IMAGE JSON khusus FOTO PROFIL
   $(document).ready(function(){
   //mengambil data dari file json
-  $.getJSON("image.json", function(data){
+  $.getJSON("../c/Squy-Kw/Kanton/Jagal/Babi/X/image.json", function(data){
     //mengulang setiap elemen data
     $.each(data, function(i, item){
       //mengambil elemen img dengan id sesuai dengan nama foto
@@ -367,7 +367,7 @@ $(document).ready(function() {
             function loadJSON(callback) {
                 var xobj = new XMLHttpRequest();
                 xobj.overrideMimeType("application/json");
-                xobj.open('GET', 'wallpaper.json', true);
+                xobj.open('GET', '../c/Squy-Kw/Kanton/Jagal/Babi/X/wallpaper.json', true);
                 xobj.onreadystatechange = function () {
                     if (xobj.readyState == 4 && xobj.status == "200") {
                         callback(JSON.parse(xobj.responseText));
@@ -453,7 +453,7 @@ $(document).ready(function() {
             function loadJSON(callback) {
                 var xobj = new XMLHttpRequest();
                 xobj.overrideMimeType("application/json");
-                xobj.open('GET', 'fotoProfil.json', true);
+                xobj.open('GET', '../c/Squy-Kw/Kanton/Jagal/Babi/X/fotoProfil.json', true);
                 xobj.onreadystatechange = function () {
                     if (xobj.readyState == 4 && xobj.status == "200") {
                         callback(JSON.parse(xobj.responseText));
@@ -517,7 +517,7 @@ $(document).ready(function() {
             // Fungsi untuk melakukan pencarian dan menampilkan hasil
             function searchAndDisplay(keyword) {
                 // Memuat data dari file JSON
-                $.getJSON("searchUtama.json", function(data) {
+                $.getJSON("../c/Squy-Kw/Kanton/Jagal/Babi/X/searchUtama.json", function(data) {
                     // Cari ID halaman berdasarkan keyword
                     var result = data.find(function (item) {
                         return keyword in item;
@@ -547,7 +547,7 @@ $(document).ready(function() {
     
     // KOMENTAR TAMPIL 
     $(document).ready(function(){
-        $.getJSON('image.json', function(data){
+        $.getJSON('../c/Squy-Kw/Kanton/Jagal/Babi/X/image.json', function(data){
             var output = '';
 
             if (data.length === 0 || (!data[0].nama && !data[0].toeks && !data[0].tanoggal)) {
@@ -608,7 +608,7 @@ $(document).ready(function() {
       $("#searchDe").keypress(function(e) {
         if (e.which === 13) {
           var kataKunci = $("#searchDe").val();
-          $.getJSON("dark.json", function(data) {
+          $.getJSON("../c/Squy-Kw/Kanton/Jagal/Babi/X/dark.json", function(data) {
 
             var mediaArray = data[kataKunci];
 
