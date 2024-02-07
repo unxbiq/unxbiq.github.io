@@ -316,6 +316,7 @@ label {
   color: #363FFC
 }
 .navigation__group .name > div {
+  display: none;
   position: absolute;
   width: 54px;
   height: 3.3px;
