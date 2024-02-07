@@ -1,6 +1,8 @@
 [
     {"all, cina": "w01"},
-    {"all, sayap, malaikat, qe": "w02"},
+    {"all, sayap, malaikat": "w02"},
     {"all, sayap, malaikat": "w03"},
-    {"all": "w04"}
+    {"all": "w04"},
+    {"all, wanita": "w05"},
+    {"all, sayap, malaikat": "w06"}
 ]
