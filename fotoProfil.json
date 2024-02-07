@@ -1,5 +1,20 @@
 [
     {"all, hijau, art": "f01"},
     {"all, art, hijau": "f02"},
-    {"all, merah, art":"f03"}
+    {"all, merah, art":"f03"},
+    {"all, panda, cina": "f04"},
+    {"all, beruang": "f05"},
+    {"all, gajah":"f06"},
+    {"all, babi": "f07"},
+    {"all, kucing, cat": "f08"},
+    {"all, anjing, dog":"f09"}
+    {"all, kucing, cat": "f10"},
+    {"all, ayam": "f11"},
+    {"all, burung, burung hantu":"f12"},
+    {"all, peguin": "f13"},
+    {"all, bebek": "f14"},
+    {"all, harimau, harimau putih":"f15"},
+    {"all, naga, dragon": "f16"},
+    {"all, singa, lion": "f17"},
+    {"all, tengkorak":"f18"}
 ]
