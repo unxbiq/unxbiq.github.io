@@ -176,7 +176,7 @@ window.addEventListener("load", loadLastVisitedPage);
 const bx1 = document.querySelector('#hal1');
 const bx2 = document.querySelector('#hal2');
 const bx3 = document.querySelector('#hal3')
-const bx4 = document.querySelector('#hal4');
+
 const by = document.querySelector('.quick-settings');
 bx1.addEventListener('click', () => {
     by.classList.add('hide');
@@ -187,9 +187,7 @@ bx2.addEventListener('click', () => {
 bx3.addEventListener('click', () => {
     by.classList.add('hide');
 });
-bx4.addEventListener('click', () => {
-    by.classList.add('hide');
-});
+
 
 
 
