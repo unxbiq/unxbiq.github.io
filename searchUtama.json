@@ -3,5 +3,5 @@
     {"wallpaper": "wallpaper"},
     {"home": "home"},
     {"rumah": "home"},
-    {"qq":"index/index.html"}
+    {"qq":"../index/index.html"}
 ]
