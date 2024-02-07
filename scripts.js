@@ -510,37 +510,35 @@ $(document).ready(function() {
     
     
 // SEARCH UTAMA DI MENU
-       $(document).ready(function () {
-
-            // Fungsi untuk melakukan pencarian dan menampilkan hasil
-            function searchAndDisplay(keyword) {
-                // Memuat data dari file JSON
-                $.getJSON("searchUtama.json", function(data) {
-                    // Cari ID halaman berdasarkan keyword
-                    var result = data.find(function (item) {
-                        return keyword in item;
-                    });
-
-                    if (result) {
-                        // Tampilkan div dengan ID yang sesuai
-                        var pageId = result[keyword];
-                        $('#' + pageId).show().siblings('.page').hide();
-                    }
-                    // Jika tidak ditemukan, tidak ada perubahan pada tampilan halaman
-                });
-            }
-
-            // Event ketika tombol 'Enter' ditekan pada input
-            $('#searchUtama').keypress(function (e) {
-                if (e.which === 13) { // 13 adalah kode ASCII untuk tombol 'Enter'
-                    var keyword = $(this).val();
-                    searchAndDisplay(keyword);
-                    $(this).val(''); // Membuat teks inputan hilang
-                    $('.quick-settings').addClass('hide');
-                }
+$(document).ready(function () {
+    // Fungsi untuk melakukan pencarian dan menampilkan hasil
+    function searchAndDisplay(keyword) {
+        // Memuat data dari file JSON
+        $.getJSON("searchUtama.json", function(data) {
+            // Cari URL halaman berdasarkan keyword
+            var result = data.find(function (item) {
+                return keyword in item;
             });
 
+            if (result) {
+                // Arahkan ke halaman dengan URL yang sesuai
+                var pageUrl = result[keyword];
+                window.location.href = pageUrl;
+            }
+            // Jika tidak ditemukan, tidak ada perubahan pada tampilan halaman
         });
+    }
+
+    // Event ketika tombol 'Enter' ditekan pada input
+    $('#searchUtama').keypress(function (e) {
+        if (e.which === 13) { // 13 adalah kode ASCII untuk tombol 'Enter'
+            var keyword = $(this).val();
+            searchAndDisplay(keyword);
+            $(this).val(''); // Membuat teks inputan hilang
+            $('.quick-settings').addClass('hide');
+        }
+    });
+});
 
     
     // KOMENTAR TAMPIL 
