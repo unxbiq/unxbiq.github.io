@@ -1,1 +1,450 @@
 
+/* MODE GELAP */
+:root {
+  --ungu: #363FFC;
+  --bgdark: #0C172D;
+  --cteks: #677695;
+}
+body.dark-mode {
+	background-color: #091a2a /*#182B3C #091a2a*/;
+  color: white;
+}
+body.dark-mode header {
+	background-color: hsl(209.1,64.7%,9%);
+	border-bottom: 0.01px solid #24425b;
+	box-shadow: 
+        rgba(0, 0, 0, 0)
+        0px 0px 0px 0px;
+  border-bottom: 1px solid rgba(156, 156, 156, 0.2);
+}
+body.dark-mode aside .quick-settings__content {
+	background-color: #091a2a;
+	color: #30AB68;
+}
+
+body.dark-mode header .navigation__group button:hover, 
+body.dark-mode header .navigation__group button:focus {
+    background-color: rgb(48, 171, 104)/*rgb(54,63,252)*/;
+    border-radius: 10px;
+}
+
+body.dark-mode header .navigation__group button svg:hover, 
+body.dark-mode header .navigation__group button svg:focus {
+    color: #182B3C;
+}
+
+body.dark-mode header .navigation__group .pr:hover, 
+body.dark-mode header .navigation__group .pr:focus {
+	border-radius: 50%;
+	background-color: rgb(31, 70, 145, 0) !important;
+}
+
+body.dark-mode .navigation__group .icon {
+    width: 48px;
+    height: 48px;
+    padding: 6px;
+    transition: all 0.2s 
+        ease-in-out;
+    border-radius: 10px;
+    color: rgb(48, 171, 104);
+    background-color: rgb(48, 171, 104, 0.2);
+}
+
+body.dark-mode .navigation__group .zx {
+	background-color: rgb(48, 171, 104, 0.15);
+}
+
+body.dark-mode .navigation__group .name {
+	color: #fff /*#4ccd86*/;
+}
+body.dark-mode .navigation__group .name > a {
+  color: #fff;
+}
+body.dark-mode .navigation__group .name > div {
+  background-color: var(--ungu);
+}
+
+body.dark-mode .switch__label {
+    text-decoration: none;
+    overflow: hidden;
+    color: #fff;
+    padding: 15px;
+    width: 100%;
+    padding-left: 40px;
+}
+body.dark-mode .switch__label svg.line {
+  stroke: #fff;
+  width: 23.5px;
+	height: 23.5px;
+}
+body.dark-mode aside .quick-settings__content .sosd a > svg {
+  fill: rgb(48, 171, 104);
+  stroke: transparent;
+  transition: .4s;
+}
+body.dark-mode aside .quick-settings__content .sosd a > svg:hover {
+  fill: #363FFC;
+  stroke: transparent;
+}
+body.dark-mode aside .quick-settings__content .close {
+	background-color: rgb(48, 171, 104, 0.1);
+}
+
+body.dark-mode aside .quick-settings__content .switch-wrapper a:hover, 
+body.dark-mode aside .quick-settings__content .switch-wrapper a:focus {
+    color: rgb(48, 171, 104);
+    background-color: rgb(48, 171, 104, .04);
+    padding: 15px;
+    padding-left: 35px;
+}
+
+body.dark-mode aside .quick-settings__content .switch-wrapper a:hover svg.line {
+    stroke: rgb(48, 171, 104);
+}
+/*
+body.dark-mode aside .quick-settings__content .switch-wrapper .switch__label.aioz {
+    color: rgb(48, 171, 104);
+    width: 100%;
+    padding: 15px;
+    padding-left: 35px;
+    font-size: 17.5px;
+}
+*/
+body.dark-mode aside .quick-settings__content .switch-wrapper:hover {
+  background-color: rgb(31, 70, 145, .02);
+  border-left: 4.5px solid rgb(48, 171, 104, .9);
+}
+
+
+/* SEARCH UTAMA */
+
+body.dark-mode aside .quick-settings__content .sU {
+  background: rgb(48, 171, 104, 0.1);
+  border: 1px solid rgb(48, 171, 104, 0.1);
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.2);
+  transition: 0.5s;
+}
+body.dark-mode aside .quick-settings__content .sU #searchUtama {
+  background: transparent;
+}
+body.dark-mode aside .quick-settings__content .sU:hover {
+  border-color: rgb(48, 171, 104, .9);
+}
+body.dark-mode aside .quick-settings__content .sU:hover svg.line {
+  stroke: rgb(48, 171, 104) !important;
+}
+body.dark-mode aside .quick-settings__content .sU:hover #searchUtama::placeholder {
+  color: rgb(48, 171, 104, .4) !important;
+  
+}
+body.dark-mode aside .quick-settings__content .sU #searchUtama:placeholder-shown:focus::placeholder,
+body.dark-mode aside .quick-settings__content .sU #searchUtama:focus::placeholder,
+body.dark-mode aside .quick-settings__content .sU #searchUtama::placeholder {
+  color: rgb(48, 171, 104, .4) !important;
+  font-family: 'Noto Sans', sans-serif;
+  transition: 0.5s;
+}
+body.dark-mode aside .quick-settings__content .sU #searchUtama {
+  color: rgb(48, 171, 104, .33) !important;
+}
+body.dark-mode aside .quick-settings__content .sU > svg.line {
+  stroke: rgb(48, 171, 104, .4);
+  transition: 0.5s;
+}
+/*
+body.dark-mode .navigation__group .om .mod ion-icon {
+	color: rgb(48, 171, 104);
+}
+*/
+
+body.dark-mode .navigation__group .om .mod svg.s,
+body.dark-mode .navigation__group .om .mod svg g path {
+  display: inline-block;
+  /*stroke: #eaf0fb;*/
+}
+
+body.dark-mode .navigation__group .om .mod .malam {
+  display: none;
+}
+body.dark-mode .navigation__group .om .mod svg {
+fill: none;
+}
+
+body.dark-mode .navigation__group .pr .profile {
+    animation: blinks 1s infinite;
+}
+
+@keyframes blinks {
+  0% { border-color: transparent; }
+  50% { border-color: rgb(48, 171, 104, 0.1); }
+  100% { border-color: transparent; }
+}
+body.dark-mode .navigation__group .pr .pils {
+  background: hsl(209.1,64.7%,9%);
+  color: #fff;
+  border: 1px solid #fff;
+}
+body.dark-mode .navigation__group .pr .pils > div {
+  background: var(--ungu);
+  animation: bingo 1s infinite;
+}
+@keyframes bingo {
+  from { background-color: var(--ungu); }
+  to { background-color: transparent; }
+}
+
+
+/* NOTIFIKASI */
+
+body.dark-mode header .navigation__group .tifs {
+    background-color: #091a2a /*#002b36*/;
+    border: 0.05px solid var(--ungu); 
+}
+body.dark-mode header .navigation__group .tifs .xi {
+  color: hsl(0,0%,90%);
+}
+body.dark-mode header .navigation__group .notif svg.line {
+  stroke: var(--ungu);
+}
+body.dark-mode header .navigation__group .notif:before {
+  content: "";
+  position: absolute;
+  top: 12.5px;
+  right: 11px;
+  padding: 3.5px;
+  border-radius: 100%;
+  background-color: hsl(209.1,64.7%,9%);
+  border: 1.8px solid hsl(209.1,64.7%,9%);
+  animation: binpos .5s infinite;
+  z-index: 3;
+}
+@keyframes binpos {
+  from { background-color: hsl(209.1,64.7%,9%); }
+  to { background-color: rgb(48, 171, 104); }
+  
+}
+
+/* IKLAN */
+body.dark-mode .contains #home .contente .iklansus > .iklansu {
+  box-shadow: 
+      rgba(0, 0, 0, 0.1)
+      3.8px 5px 8px,
+      rgba(0, 0, 0, 0.1)
+      3.8px 5px 8px;
+  border: 0.85px solid rgba(156, 156, 156, 0.2);
+}
+
+
+/* 
+==================
+    HOME
+==================
+*/
+body.dark-mode .contains #home .contente .jdl .jd,
+body.dark-mode .contains #wallpaper .contente .jdl0 .jd,
+body.dark-mode .contains #fotoProfil .contente .jdl0 .jd {
+  color: #fff;
+}
+body.dark-mode .contains #home .contente .jdl > div,
+body.dark-mode .contains #wallpaper .contente .jdl0 > div,
+body.dark-mode .contains #fotoProfil .contente .jdl0 > div {
+  background-color: rgb(48, 171, 104, .65);
+}
+
+
+body.dark-mode .contains .page .contente .kembalis .kembalis1 {
+  color: #d9d9d9;
+}
+body.dark-mode .contains .page .contente .kembalis .kembalis2 {
+  color: #d9d9d9;
+  margin-left: 6.5px;
+}
+body.dark-mode .contains .page .contente .kembalis .kembalis3 {
+  color: #fff;
+  margin-left: 6.5px;
+  font-size: 15px !important;
+}
+
+
+/* CONTENT */
+body.dark-mode .contains #home .contente .panned .pan .in {
+  color: hsl(147, 56%, 75%);
+}
+body.dark-mode .contains #home .contente .panned .pan .in > p {
+  color: hsl(147, 56%,54%);
+}
+body.dark-mode .contains #home .contente .panned .pan .in0 {
+  color: #fff;
+}
+body.dark-mode .contains #home .contente .panned .pan .in0:hover {
+  color: var(--ungu);
+}
+body.dark-mode .contains #home .contente .panned .pan .de {
+  color: hsl(0, 0%, 87%);
+}
+body.dark-mode .contains #home .contente .panned .pan .de > ion-icon {
+  color: hsl(0, 0%, 80%);
+}
+body.dark-mode .contains #home .contente .panned .ijd {
+  border: .4px solid rgba(225,225,225,0.1);
+}
+
+
+/* SEARCH */
+body.dark-mode .contains #wallpaper .contente .caris,
+body.dark-mode .contains #fotoProfil .contente .carisp {
+  background: rgb(255,255,255,.1);
+  border: 1px solid #fff;
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.1);
+  transition: 0.5s;
+}
+body.dark-mode .contains #wallpaper .contente .caris #inputs,
+body.dark-mode .contains #fotoProfil .contente .carisp #inputsp {
+  background: transparent;
+  color: rgb(48, 171, 104) !important;
+}
+body.dark-mode .contains #wallpaper .contente .caris #inputs:placeholder-shown:focus::placeholder,
+body.dark-mode .contains #wallpaper .contente .caris #inputs:focus::placeholder,
+body.dark-mode .contains #fotoProfil .contente .carisp #inputsp:placeholder-shown:focus::placeholder,
+body.dark-mode .contains #fotoProfil .contente .carisp #inputsp:focus::placeholder {
+  color: rgb(48, 171, 104, .4) !important;
+}
+body.dark-mode .contains #wallpaper .contente .caris:hover,
+body.dark-mode .contains #fotoProfil .contente .carisp:hover {
+  border-color: rgb(48, 171, 104, 0.8);
+  background: rgb(48, 171, 104,.1);
+}
+body.dark-mode .contains #wallpaper .contente .caris:hover svg.line,
+body.dark-mode .contains #fotoProfil .contente .carisp:hover svg.line {
+  stroke: rgb(48, 171, 104) !important;
+}
+body.dark-mode .contains #wallpaper .contente .caris:hover #inputs::placeholder,
+body.dark-mode .contains #fotoProfil .contente .carisp:hover #inputsp::placeholder {
+  color: rgb(48, 171, 104, .4) !important;
+}
+body.dark-mode .contains #wallpaper .contente .caris #inputs::placeholder,
+body.dark-mode .contains #fotoProfil .contente .carisp #inputsp::placeholder {
+  color: rgb(225, 225, 225, .4);
+  font-family: 'Noto Sans', sans-serif;
+}
+body.dark-mode .contains #wallpaper .contente .caris > svg.line,
+body.dark-mode .contains #fotoProfil .contente .carisp > svg.line {
+  stroke: #fff;
+  transition: 0.5s;
+}
+body.dark-mode .contains #wallpaper .contente .ponsive .notresult,
+body.dark-mode .contains #fotoProfil .contente .ponsive .notresultp {
+  color: hsl(0, 0%, 65%) !important;
+}
+
+
+/* BUTTON TO TOP */
+body.dark-mode .topso {
+  background-color: rgb(5,113,54);
+}
+
+
+/* FOOTER */
+body.dark-mode .contains .page > .foot .fff {
+  color: hsl(0, 0%, 88%);
+}
+body.dark-mode .contains .page > .foot .fff > a {
+  color: rgb(48, 171, 104) !important;
+}
+body.dark-mode .contains .page > .foot .fff > p {
+  color: rgb(48, 171, 104) !important;
+}
+
+/* TEKS IKLAN */
+body.dark-mode .contains #home .contente .bg_teks24 .bg24 {
+  background-color: hsl(209.1,64.7%,15%);
+  color: #fff /*hsl(0,0%,50%)*/;
+  box-shadow: 
+  3.8px 4.8px 9px rgba(0,0,0,0.04),
+  -3.8px 4.8px 9px rgba(0,0,0,0.04);
+  border: 0.85px solid hsl(209.1,64.7%,20%);
+}
+body.dark-mode .contains #home .contente .bg_teks24 .bg24 > ion-icon {
+  background-color: hsl(209.1,64.7%,20%);
+  color: hsl(209.1,64.7%,40%);
+}
+body.dark-mode .contains #home .contente .bg_teks24 .bg24 .paddings #teks24jam .spasi {
+  color: hsl(0,0%,50%);
+}
+body.dark-mode .contains #home .contente .bg_teks24 .bg24 .paddings #teks24jam .teks24 {
+  color: #fff;
+}
+body.dark-mode .contains #home .contente .bg_teks24 .bg24 .paddings #teks24jam .tekss24 {
+  color: hsl(147.2,91.5%,60%) !important;
+}
+body.dark-mode .contains #home .contente .bg_teks24 .bg24 .paddings #teks24jam .kurung {
+  color: hsl(0,0%,100%);
+}
+
+
+/* SEAECH DW */
+body.dark-mode .contains .page .contente .carisde .carisd {
+
+  background: rgb(54,63,252, .08);
+  border: 1px solid rgb(54,63,252, .5);
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.1);
+  transition: 0.5s;
+}
+body.dark-mode .contains .page .contente .carisde .carisd #searchDe {
+  background: transparent;
+  color: rgb(54,63,252) !important;
+}
+body.dark-mode .contains .page .contente .carisde .carisd #searchDe:placeholder-shown:focus::placeholder {
+  color: rgb(54,63,252, .5) !important;
+}
+body.dark-mode .contains .page .contente .carisde .carisd:hover {
+  border-color: rgb(54,63,252);
+  background: rgb(54,63,252, .1);
+}
+body.dark-mode .contains .page .contente .carisde .carisd:hover svg.line {
+  stroke: rgb(54,63,252) !important;
+}
+body.dark-mode .contains .page .contente .carisde .carisd:hover #searchDe::placeholder {
+  color: rgb(54,63,252, .4) !important;
+}
+body.dark-mode .contains .page .contente .carisde .carisd #searchDe::placeholder {
+  color: rgb(54,63,252, .4);
+  font-family: 'Noto Sans', sans-serif;
+}
+body.dark-mode .contains .page .contente .carisde .carisd > svg.line {
+  stroke: rgb(54,63,252, .5);
+  transition: 0.5s;
+}
+
+/* NOTSCLOSE */
+body.dark-mode .contains .page .contente .ponsived .notsresult {
+  color: hsl(360,68%,100%);
+}
+body.dark-mode .contains .page .contente .ponsived .notsresult > .dx {
+  background: rgb(225,225,225, .08);
+  border: 0.1px solid hsl(360,68%,100%);
+}
+body.dark-mode .contains .page .contente .ponsived .notsresult .dx > ion-icon {
+  background-color: rgb(225,225,225, .09);
+  color: hsl(360,68%,100%);
+}
+
+
+/*
+NOTIFIKASI
+*/
+body.dark-mode .contains .page .contente .ponsiven .noti {
+  background-color: rgb(54,63,252, .09);
+  box-shadow: none;
+}
+
+body.dark-mode .contains .page .contente .ponsiven .bol .boll {
+  background-color: hsl(237.3,97.1%,70%);
+}
+
+body.dark-mode .contains .page .contente .ponsiven .noti .p {
+  color: #fff;
+}
+body.dark-mode .contains .page .contente .ponsiven .noti .p a {
+  color: rgb(48, 171, 104);
+}
