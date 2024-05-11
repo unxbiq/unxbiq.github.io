@@ -20,5 +20,15 @@
     {"all, hati, jantung": "w19"},
     {"all, cat, helloween, kucing": "w20"},
     {"all, kucing, cat": "w21"},
-    {"all, cat, kucing": "w22"}
+    {"all, cat, kucing": "w22"},
+    {"all, cina, naga": "w23"},
+    {"all, cina, naga": "w24"},
+    {"all, kakek": "w25"},
+    {"all": "w26"},
+    {"all": "w27"},
+    {"all, wanita": "w28"},
+    {"all, singa, lion": "w29"},
+    {"all, spiderman": "w30"},
+    {"all, tengkorak": "w31"},
+    {"all, dewi, buddha": "w32"}
 ]
