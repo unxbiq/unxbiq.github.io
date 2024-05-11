@@ -18,5 +18,7 @@
     {"all, wanita": "w17"},
     {"all, wanita": "w18"},
     {"all, hati, jantung": "w19"},
-    {"all, cat, helloween, kucing": "w20"}
+    {"all, cat, helloween, kucing": "w20"},
+    {"all, kucing, cat": "w21"},
+    {"all, cat, kucing": "w22"}
 ]
