@@ -8,7 +8,7 @@ $(document).ready(function() {
     function displayContent(keyword) {
       var videoPath = keywords[keyword];
       if (videoPath) {
-        $('#videoContainer').html('<div class="vid"><iframe id="vii" src="' + videoPath + '" controls controlsList="nodownload"></iframe></div><button class="back"> Kembali</button>');
+        $('#videoContainer').html('<div class="vid"><iframe id="vii" src="' + videoPath + '" controls frameborder="0"></iframe></div><button class="back"> Kembali</button>');
         $('#inputans').hide();
         $('.back').on('click', function() {
           $('.vid').hide();
