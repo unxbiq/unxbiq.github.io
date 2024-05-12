@@ -187,6 +187,10 @@ INPUTAN 20 KARAKTER
   min-height: 285px;
   border-radius: 23px;
   background: rgb(120,126,255,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 .pagex > .contente .pg #videoContainer .vid #vii {
@@ -207,7 +211,7 @@ INPUTAN 20 KARAKTER
   border-radius: 14px;
   padding: 10px 14.5px;
 }
-
+/*
 .pagex > .contente .pg #videoContainer .video-controls {
   position: absolute;
   top: 20px;
@@ -224,3 +228,4 @@ INPUTAN 20 KARAKTER
   color: white;
   cursor: pointer;
 }
+*/
