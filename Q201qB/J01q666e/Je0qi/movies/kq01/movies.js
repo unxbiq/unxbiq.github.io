@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Memuat data JSON dari file
-  $.getJSON('../d/movies.json', function(data) {
+  $.getJSON('../kq01/d/movies.json', function(data) {
     var keywords = data[0];
     var errorMessage = data[1].kesalahan;
 
