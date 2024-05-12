@@ -275,10 +275,11 @@ INPUTAN 20 KARAKTER
 
 .pagex > .contente .pg #videoContainer .back {
   font-family: 'Barlow Semi Condensed', sans-serif;
-  margin-top: 23px;
+  margin-top: 24px;
   color: #363FFC !important;
   background: rgb(120,126,255,0.35);
   border-radius: 14px;
+  border: 1px solid #fff;
   padding: 10px 14.5px;
 }
 /*
