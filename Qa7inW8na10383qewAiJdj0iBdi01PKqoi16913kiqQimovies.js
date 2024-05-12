@@ -68,6 +68,9 @@ $(document).ready(function(){
 $('.btns').on('click', function() {
   $('.lan').hide();
 });
+$('.btns0').on('click', function() {
+  $('.lan0').hide();
+});
 
 /* HIDE */
 $(document).ready(function(){
