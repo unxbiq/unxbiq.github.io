@@ -211,15 +211,15 @@ INPUTAN 20 KARAKTER
   height: auto;
   background: rgb(120,126,255,0) /*no warna*/;
   overflow: hidden;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  color: #ff6868ff;
 }
 .pagex > .contente .pg #videoContainer .vid {
-  font-family: 'Barlow Semi Condensed', sans-serif;
   position: relative;
   /*width: fit-content;*/
   width: 100%;
   height: 310px;
   border-radius: 18px;
-  color: #ff6868ff;
   background: rgb(120,126,255,0.07);
   overflow: hidden;
 }
