@@ -257,6 +257,10 @@ INPUTAN 20 KARAKTER
   height: 310px;
   border-radius: 18px;
   background: rgb(120,126,255,0.07);
+  border: 1px solid #fff;
+  box-shadow: 
+      rgba(100, 100, 111, 0.2)
+      0px 7px 29px 0px;
   overflow: hidden;
 }
 .pagex > .contente .pg #videoContainer .vid > #vii {
