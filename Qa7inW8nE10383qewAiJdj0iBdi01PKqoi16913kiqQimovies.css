@@ -139,6 +139,16 @@ INPUTAN 20 KARAKTER
   align-items: center;
   justify-content: center;
 }
+.pagex > .contente .pg .lan0 {
+  position: absolute;
+  top: 135px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .pagex > .contente .pg .lan .lan2 {
   font-family: 'Noto Sans', sans-serif;
   position: relative;
@@ -154,7 +164,30 @@ INPUTAN 20 KARAKTER
       0px 7px 29px 0px;
       color: #363FFC;
 }
+.pagex > .contente .pg .lan0 .lan20 {
+  font-family: 'Noto Sans', sans-serif;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 85%;
+  padding: 4.5px 5px 5px 20px;
+  background: #c2c5ff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-shadow: 
+      rgba(100, 100, 111, 0.2)
+      0px 7px 29px 0px;
+      color: #363FFC;
+}
 .pagex > .contente .pg .lan .lan2 .btns {
+  border: transparent;
+  margin-left: auto;
+  padding: 10px 14px;
+  background: transparent;
+  border-radius: 7.5px;
+  color: rgb(31, 70, 145);
+}
+.pagex > .contente .pg .lan0 .lan20 .btns0 {
   border: transparent;
   margin-left: auto;
   padding: 10px 14px;
