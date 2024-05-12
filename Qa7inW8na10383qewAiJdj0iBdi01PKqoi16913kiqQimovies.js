@@ -47,3 +47,18 @@ $(document).ready(function(){
         $(this).contents().find('.ndfHFb-c4YZDc-Bz112c').hide(); // class tombol panah diubah sesuai versi saat ini
     });
 });
+
+$(document).ready(function(){
+  $('.vid').click(function(){
+    var elem = $(this)[0];
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+  });
+});
