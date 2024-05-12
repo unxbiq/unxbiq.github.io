@@ -171,6 +171,9 @@ INPUTAN 20 KARAKTER
 .pagex > .contente .pg .lan .lan2 .tek .t {
   color: #5159ffff !important;
 }
+.pagex > .contente .pg .lan .lan20 .tek .x {
+  margin-right: 10.5px;
+}
 .pagex > .contente .pg .lan .lan20 {
   font-family: 'Noto Sans', sans-serif;
   position: relative;
