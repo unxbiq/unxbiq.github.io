@@ -153,7 +153,13 @@ INPUTAN 20 KARAKTER
   box-shadow: 
       rgba(100, 100, 111, 0.2)
       0px 7px 29px 0px;
-      color: #363FFC;
+  color: #363FFC;
+}
+.pagex > .contente .pg .lan .lan20 .tek0 .t0 {
+  color: #d58d00ff !important;
+}
+.pagex > .contente .pg .lan .lan2 .tek .t {
+  color: #3b44ffff !important;
 }
 .pagex > .contente .pg .lan .lan20 {
   font-family: 'Noto Sans', sans-serif;
@@ -168,7 +174,7 @@ INPUTAN 20 KARAKTER
   box-shadow: 
       rgba(100, 100, 111, 0.2)
       0px 7px 29px 0px;
-      color: #363FFC;
+  color: #363FFC;
 }
 .pagex > .contente .pg .lan .lan2 .btns {
   border: transparent;
