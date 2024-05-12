@@ -66,10 +66,11 @@ $(document).ready(function(){
 
 /* CLOSE LAN */
 $('.btns').on('click', function() {
-  $('.lan2').hide();
+  $('#lanA').hide();
 });
+
 $('.btns0').on('click', function() {
-  $('.lan20').hide();
+  $('#lanB').hide();
 });
 
 /* HIDE */
