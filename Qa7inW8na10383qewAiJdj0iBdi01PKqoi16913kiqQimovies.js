@@ -89,3 +89,13 @@ $(document).ready(function(){
     }
   });
 });
+
+/* MAKS 20 KARAKTER */
+$(document).ready(function(){
+    $('#keywordInput').on('input', function() {
+        var input = $(this).val();
+        if(input.length > 35) {
+            $(this).val(input.slice(0, 35));
+        }
+    });
+});
