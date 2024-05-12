@@ -170,6 +170,7 @@ INPUTAN 20 KARAKTER
 }
 .pagex > .contente .pg .lan .lan2 .tek .t {
   color: #3b44ffff !important;
+  margin-right: 10.5px;
 }
 .pagex > .contente .pg .lan .lan20 {
   font-family: 'Noto Sans', sans-serif;
