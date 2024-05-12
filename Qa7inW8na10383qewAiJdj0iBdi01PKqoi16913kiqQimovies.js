@@ -62,3 +62,26 @@ $(document).ready(function(){
     }
   });
 });
+
+
+/* CLOSE LAN */
+$('.btns').on('click', function() {
+  $('.lan').hide();
+});
+
+/* HIDE */
+$(document).ready(function(){
+  var originalValue = '';
+  $('#toggle').on('click', function() {
+    var input = $('#keywordInput');
+    if(input.data('masked')) {
+      input.val(originalValue);
+      input.data('masked', false);
+    } else {
+      originalValue = input.val();
+      var maskedValue = originalValue.replace(/./g, ' ⚅ ');
+      input.val(maskedValue);
+      input.data('masked', true);
+    }
+  });
+});
