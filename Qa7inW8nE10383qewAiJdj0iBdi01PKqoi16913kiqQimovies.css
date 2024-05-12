@@ -131,7 +131,7 @@ INPUTAN 20 KARAKTER
 }
 .pagex > .contente .pg .lan {
   position: absolute;
-  top: 85px;
+  top: 75px;
   width: 100%;
   padding: 10px;
   display: flex;
@@ -141,7 +141,7 @@ INPUTAN 20 KARAKTER
 }
 .pagex > .contente .pg .lan0 {
   position: absolute;
-  top: 155px;
+  top: 130px;
   width: 100%;
   padding: 10px;
   display: flex;
