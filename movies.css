@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
-
-
-
+/*
+CODED BY : M@IKEL
+*/
 
 .navigation__group .burgers {
     display: flex;
@@ -183,8 +183,8 @@ INPUTAN 20 KARAKTER
   position: relative;
   /*width: fit-content;*/
   width: 100%;
-  height: 100%;
-  border-radius: 35px;
+  height: 290px;
+  border-radius: 20px;
   background: rgb(120,126,255,0.07);
   overflow: hidden;
 }
