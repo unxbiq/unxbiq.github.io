@@ -282,6 +282,36 @@ INPUTAN 20 KARAKTER
   border: 1px solid #fff;
   padding: 10px 14.5px;
 }
+
+
+/*
+POSISI TERKINI 
+*/
+.contenteui .kembalis0 {
+  font-family: 'Noto Sans', sans-serif;
+  width: 97%;
+  margin-top: 9px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 12.5px;
+}
+.contenteui .kembalis0 .kembalis1 {
+  color: #6a6a6a;
+  text-decoration: none;
+}
+.contenteui .kembalis0 .kembalis2 {
+  color: #6a6a6a;
+  margin-left: 6.5px;
+}
+.contenteui .kembalis0 .kembalis3 {
+  color: #444444;
+  margin-left: 6.5px;
+  font-size: 15px !important;
+}
+
+
 /*
 .pagex > .contente .pg #videoContainer .video-controls {
   position: absolute;
