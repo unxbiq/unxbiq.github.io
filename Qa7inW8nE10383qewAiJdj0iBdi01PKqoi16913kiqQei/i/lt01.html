@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+    <!--
+  AUTHOR : UNXBIQ @UNXBIQ ©2023
+  -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--<meta charset="UTF-8">        	-->
+        <title>Linktree</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- JENINS FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <!-- ICON -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+
+        <!-- 
+        STYLE SEBUAH WEBSITE 
+        -->
+        <style type="text/css">
+            /* PENGINGAT WARNA */
+            :root {
+                --putih: #fafeff;
+                --b1: #a6eff8;
+                --b2: #68dceb;
+                --b3: #3bc9db;
+                --b4: #19adbf;
+                --b5: #0d8c9c;
+            }
+            html {
+              scroll-behavior: smooth;
+            }
+            body {
+                /*font-family: 'Outfit', sans-serif;*/
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                background-color: #a6eff8;
+            }
+            * {
+                box-sizing: border-box;
+                text-decoration: none;
+                margin: 0;
+                padding: 0;
+            }
+            body .container {
+              padding: 0px;
+              min-height: 100vh;
+              display: flex;
+              flex-direction: column;
+            }
+            body .container header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                width: 100%;
+                min-height: 100%;
+                /* margin-bottom: -10px;*/
+            }
+            .profile {
+                margin-top: 4em;
+                display: block;
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 3.5px solid transparent;
+                background-size: cover;
+                animation: blink 1s infinite;
+                margin-bottom: 1.35rem;
+            }
+            @keyframes blink {
+                0% {
+                    border-color: transparent;
+                }
+                50% {
+                    border-color: rgb(31, 70, 145, 0.25);
+                }
+                100% {
+                    border-color: transparent;
+                }
+            }
+            .nama {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 500;
+                font-size: 17.5px;
+                color: #027c8c;
+            }
+            #btns {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                padding-top: 65px;
+            }
+            #btns .btn {
+                text-decoration: none;
+                color: #19adbf;
+                padding: 20px 80px;
+                margin-bottom: 28px;
+                width: 90%;
+                border-radius: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 400;
+                font-size: 20px;
+                background: rgba(255, 255, 255, 0.5);
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+                border: 1.2px solid rgb(25, 173, 191, 0.8);
+                box-shadow:
+                    1.9px 1.9px 9.2px rgba(0, 0, 0, 0.021),
+                    5.1px 5.1px 25.4px rgba(0, 0, 0, 0.03),
+                    12.4px 12.4px 61.2px rgba(0, 0, 0, 0.019),
+                    41px 41px 203px rgba(0, 0, 0, 0.06);
+                transition: 0.25s;
+            }
+            #btns .btn:hover,
+            #btns .btn:focus {
+                width: 92.5%;
+                font-size: 22.5px;
+                color: #fff;
+                background: rgb(25, 173, 191, 0.5);
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+                border: 1.3px solid rgb(255, 255, 255);
+                box-shadow:
+                    1.9px 1.9px 9.2px rgba(0, 0, 0, 0.021),
+                    5.1px 5.1px 25.4px rgba(0, 0, 0, 0.03),
+                    12.4px 12.4px 61.2px rgba(0, 0, 0, 0.039),
+                    41px 41px 203px rgba(0, 0, 0, 0.06);
+            }
+            .btn i {
+                font-size: 30px;
+                margin-right: 13px;
+            }
+            .bawah {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 400;
+                font-size: 10px;
+                color: rgb(13, 140, 156);
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                left: 0;
+                bottom: 0;
+                margin-top: auto;
+            }
+            .bawah .foo {
+                color: var(--b4);
+            }
+            .bawah .foo1 {
+                margin-left: 2.3px;
+            }
+            .bawah .fo {
+                color: rgb(13, 140, 156);
+                margin-left: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="pf">
+                    <!-- GANTI FOTO PROFIL SESUAI KEINGINAN -->
+                    <img
+                        class="profile"
+                        src="profile.jpg"
+                        alt="image"
+                    />
+                </div>
+                <!-- GANTI NAMA SESUAI KEINGINAN -->
+                <p class="nama">@UNXBIQ</p>
+                <!-- TOMBOL -->
+                <div id="btns">
+                    <!-- href="link_ig" -->
+                    <a href="#" class="btn">
+                        <i class="fa-brands fa-instagram"></i>
+                        instagram
+                    </a>
+                    <!-- href="link_tiktok" -->
+                    <a href="#" class="btn">
+                        <i class="fa-brands fa-tiktok"></i>
+                        tiktok
+                    </a>
+                    <!-- href="link_WA" -->
+                    <a href="#" class="btn">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        whatsapp
+                    </a>
+                    <!-- href="link_Youtube" -->
+                    <a href="#" class="btn">
+                        <i class="fa-brands fa-youtube"></i>
+                        youtube
+                    </a>
+                    <!-- href="link_telegram" -->
+                    <a href="#" class="btn">
+                        <i class="fa-brands fa-telegram"></i>
+                        telegram
+                    </a>
+                    
+                </div>
+            </header>
+            <div class="bawah">
+                <p class="foo">&copy;2023 •</p>
+                <p class="fo">UNXBIQ.</p>
+                <p class="foo foo1">All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>
