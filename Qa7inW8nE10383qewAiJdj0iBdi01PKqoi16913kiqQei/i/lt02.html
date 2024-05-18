@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+    <!--
+  AUTHOR : UNXBIQ @UNXBIQ ©2023
+  -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--<meta charset="UTF-8">        	-->
+        <title>Toolbar Menu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- JENINS FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <!-- ICON -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+
+        <!-- 
+        STYLE SEBUAH WEBSITE 
+        -->
+        <style type="text/css">
+            /* PENGINGAT WARNA */
+            :root {
+                --bg1: #212121;
+                --bg: #1A2B3A;
+                --bg0: #2A4860;
+                --btn: #667380;
+                --btn0: #142736;
+                --b: #13F5C8;
+                --p: #fff;
+                --glass: rgba(156, 156, 156, 0.466);; /*backdrop-filter: blur(4px);*/
+            }
+            html {
+              scroll-behavior: smooth;
+            }
+            * {
+              font-family: "Montserrat", sans-serif;
+              box-sizing: border-box;
+              text-decoration: none;
+              margin: 0;
+              padding: 0;
+            }
+            /* Page */
+            body {
+              margin: 0;
+              /*position: relative;*/
+              min-height: 100vh;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 0;
+              background: linear-gradient(
+              164.3deg,
+              var(--bg0) 10.8%,
+              var(--bg) 94.3%
+              );
+            }
+            body .container {
+              width: 100%;
+              min-height: 100%;
+              display: flex;
+              flex-direction: column;
+              padding: 0;
+              margin-top: 0;
+              margin-bottom: 50px;
+              /*justify-content: center;*/
+              align-items: center;
+            }
+            .container .content {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              color: var(--p);
+              font-weight: 500;
+              font-size: 17px;
+              margin-top: 0;
+              margin-bottom: 3.4rem;
+            }
+            .content .pr {
+                margin-top: 3.85em;
+                display: block;
+                width: 124px;
+                height: 124px;
+                border-radius: 50%;
+                border: 1px solid var(--glass);
+                background-size: cover;
+                margin-bottom: 1.35rem;
+                box-shadow: 2px 2px 7.5px rgb(0,0,0,0.25);
+            }
+            .container .btns {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 100%;
+            }
+            .btns > a {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+              /*height: 3rem;*/
+              padding: 20px 20px;
+              padding-right: 17px;
+              margin-bottom: 23px;
+              border-radius: 10px;
+              background: rgba(156, 156, 156, 0.25);
+              background-size: 400%;
+              color: #fff;
+              cursor: pointer;
+              border: 1px solid var(--glass);
+              min-width: 80%;
+              transition: all 0.75s;
+            }
+            .btns > a:hover {
+              color: var(--b);
+              border: 1px solid rgb(19,245,200,0.25);
+            }
+            .btns > a:hover::before {
+              transform: scaleX(1);
+            }
+            .btns a > .fa-brands {
+              font-size: 1.5rem;
+            }
+            .btns a > .fa-solid {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              text-align: right;
+              justify-content: center;
+              font-size: 1.4rem;
+            }
+          .btns a > div {
+            margin-left: 15.8px;
+            font-size: 1.3rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+          }
+          .btns a > div,
+          .btns a > .fa-brands {
+            position: relative;
+            z-index: 1;
+          }
+          .btns  > a::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: 100%/*inherit*/;
+            border-radius: inherit;
+            /*background: linear-gradient(
+            82.3deg,
+            rgba(150, 93, 233, 1) 10.8%,
+            rgba(99, 88, 238, 1) 94.3%
+            );*/
+            background: var(--btn0);
+            transition: all 0.475s;
+          }
+            
+            body footer {
+              width: 100%;
+              font-weight: 400;
+              font-size: 10px;
+              color: var(--p);
+              padding: 10px;
+              margin-top: auto;
+              margin-bottom: 0;
+              bottom: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+            footer .fo {
+              display: flex;
+              justify-content: center;
+            }
+            footer .fo > p {
+              color: #b2b7bb;
+              margin-left: 2px;
+              margin-right: 2.3px;
+            }
+            @media (min-width: 768px) {
+              .content .pr {
+                width: 224px;
+                height: 224px;
+                border-radius: 50%;
+                border: 4.5px solid var(--bg0);
+              }
+            }
+        </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="content">
+          <img class="pr" src="profile.jpg" alt="image">
+          <p>@UNXBIQ</p>
+        </div>
+        <div class="btns">
+          <!-- href="link-YOUTUBE-kamu" -->
+          <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+            <div>youtube</div>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+          <!-- href="link-IG-kamu" -->
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+            <div>instagram</div>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+          <!-- href="link-TIKTOK-kamu" -->
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+            <div>tiktok</div>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+          <!-- href="link-TWITTER-kamu" -->
+          <a href="#">
+            <i class="fa-brands fa-x-twitter"></i>
+            <div>twitter</div>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+          <!-- href="link-email-kamu" -->
+          <a href="#">
+            <i class="fa-brands fa-at"></i>
+            <div>email</div>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+          <!-- ANDA DAPAT MENAMBAHKANNYA SESUAI KEBUTUHAN -->
+        </div>
+      </div>
+      
+      <footer>
+        <div class="fo">
+          &copy;2023 •
+          <p>UNXBUQ.</p>
+          All rights reserved.
+        </div>
+      </footer>
+    </body>
+</html>
