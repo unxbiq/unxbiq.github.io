@@ -29,5 +29,11 @@
     {"all, poodle, poodle dog, anjing, dog": "f28"},
     {"all, puma":"f29"},
     {"all, cyber, hacker, ai": "f30"},
-    {"all, penguin":"f31"}
+    {"all, penguin":"f31"},
+    {"all, kalkun, kalkun merah": "f32"},
+    {"all, emu, burung, burung emu":"f33"},
+    {"all, triceratops, dinosaurus": "f34"},
+    {"all, monkey, monyet":"f35"},
+    {"all, panda, china, chinese": "f36"},
+    {"all, hyena":"f37"}
 ]
