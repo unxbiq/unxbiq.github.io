@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Memuat data JSON dari file
-  $.getJSON('Qa7inW8ni10383qewAiJdj0iBdi01PKqoi16913kiqQimovies.json', function(data) {
+  $.getJSON('../Qa7inW8n310383qewAiJdj0iBdi01PKqoi16913kiqQimovies/QaKqoi16913kiqQi/QaKqoy86913kiqQi/QaKqoy86913kiqQi.json', function(data) {
     var keywords = data[0];
     var errorMessage = data[1].kesalahan;
 
