@@ -2,7 +2,7 @@
     {"all, hijau, art": "f01"},
     {"all, art, hijau": "f02"},
     {"all, merah, art":"f03"},
-    {"all, panda, cina": "f04"},
+    {"all, panda, cina, china, chinese": "f04"},
     {"all, beruang": "f05"},
     {"all, gajah":"f06"},
     {"all, babi": "f07"},
@@ -11,7 +11,7 @@
     {"all, kucing, cat": "f10"},
     {"all, ayam": "f11"},
     {"all, burung, burung hantu":"f12"},
-    {"all, peguin": "f13"},
+    {"all, penguin": "f13"},
     {"all, bebek": "f14"},
     {"all, harimau, harimau putih":"f15"},
     {"all, naga, dragon": "f16"},
@@ -34,6 +34,9 @@
     {"all, emu, burung, burung emu":"f33"},
     {"all, triceratops, dinosaurus": "f34"},
     {"all, monkey, monyet":"f35"},
-    {"all, panda, china, chinese": "f36"},
-    {"all, hyena":"f37"}
+    {"all, panda, china, cina, chinese": "f36"},
+    {"all, hyena":"f37"},
+    {"all, cyber, hacker, ai":"f38"},
+    {"all, cyber, hacker, ai": "f39"},
+    {"all, ayam, ayam jantan":"f40"}
 ]
