@@ -329,3 +329,29 @@ POSISI TERKINI
   color: white;
   cursor: pointer;
 }*/
+
+
+/*
+NAMA FILM
+*/
+.pagex > .contente .pg #videoContainer .vid .films {
+  position: absolute;
+  display: flex;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 18px;
+  color: #c2c5ff;
+  left: 20px;
+  top: 7.7px;
+  background-color: transparent;
+}
+.pagex > .contente .pg #videoContainer .vid .jx > p {
+  font-size: 16.5px !important;
+  color: #fff !important;
+  margin-right: 3px !important;
+}
+.pagex > .contente .pg #videoContainer .vid .jx > io {
+  font-size: 19px !important;
+  color: #363FFC !important;
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+}
