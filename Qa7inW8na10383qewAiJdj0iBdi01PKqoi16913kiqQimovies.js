@@ -11,7 +11,7 @@ $(document).ready(function() {
         var videoPath = videoInfo.link;
         var videoName = videoInfo.name;
         if (videoPath) {
-          $('#videoContainer').html('<div class="vid"><div class="films"><p>Unxbiq</p><io>|</io>' + videoName + '</div><iframe id="vii" src="' + videoPath + '" controls controlsList="nodownload" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div><button class="back"> Kembali</button>');
+          $('#videoContainer').html('<div class="vid"><div class="films"><p>Unxbiq</p><io> | </io>' + videoName + '</div><iframe id="vii" src="' + videoPath + '" controls controlsList="nodownload" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div><button class="back"> Kembali</button>');
           $('#inputans').hide();
           $('.back').on('click', function() {
             $('.vid').hide();
