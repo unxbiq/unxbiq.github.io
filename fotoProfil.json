@@ -16,5 +16,14 @@
     {"all, harimau, harimau putih":"f15"},
     {"all, naga, dragon": "f16"},
     {"all, singa, lion": "f17"},
-    {"all, tengkorak":"f18"}
+    {"all, tengkorak":"f18"},
+    {"all, anime, anime bermasker":"f19"},
+    {"all, anime": "f20"},
+    {"all": "f21"},
+    {"all, anime":"f22"},
+    {"all, naga, dragon, one piece": "f23"},
+    {"all, anime bertopeng kelinci": "f24"},
+    {"all":"f25"},
+    {"all": "f26"},
+    {"all, anime bermasker":"f27"}
 ]
