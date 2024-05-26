@@ -6,15 +6,21 @@ $(document).ready(function() {
 
     // Fungsi untuk menampilkan video atau pesan kesalahan
     function displayContent(keyword) {
-      var videoPath = keywords[keyword];
-      if (videoPath) {
-        $('#videoContainer').html('<div class="vid"><iframe id="vii" src="' + videoPath + '" controls frameborder="0" allowfullscreen="allowfullscreen"></iframe></div><button class="back"> Kembali</button>');
-        $('#inputans').hide();
-        $('.back').on('click', function() {
-          $('.vid').hide();
-          $('.back').hide();
-          $('#inputans').show();
-        });
+      var videoInfo = keywords[keyword];
+      if (videoInfo) {
+        var videoPath = videoInfo.link;
+        var videoName = videoInfo.name;
+        if (videoPath) {
+          $('#videoContainer').html('<div class="vid"><div class="jx"><p>Unxbiq</p><io>|</io>' + videoName + '</div><iframe id="vii" src="' + videoPath + '" controls controlsList="nodownload" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div><button class="back"> Kembali</button>');
+          $('#inputans').hide();
+          $('.back').on('click', function() {
+            $('.vid').hide();
+            $('.back').hide();
+            $('#inputans').show();
+          });
+        } else {
+          $('#videoContainer').text(errorMessage);
+        }
       } else {
         $('#videoContainer').text(errorMessage);
       }
@@ -29,6 +35,8 @@ $(document).ready(function() {
     });
   });
 });
+
+
 
 $(document).ready(function(){
     // Menghilangkan tombol unduh dari iframe
