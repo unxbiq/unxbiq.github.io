@@ -48,5 +48,11 @@
     {"all, gagak, burung gagak": "f47"},
     {"all, merak, burung merak": "f48"},
     {"all, serigala":"f49"},
-    {"all, burung": "f50"}
+    {"all, burung": "f50"},
+    {"all, cyber, hacker, ai": "f51"},
+    {"all, elang, burung, burung elang":"f52"},
+    {"all, toleransi, sepasang kekasih, cinta beda keyakinan, muslim, islam, kristen, katholik": "f53"},
+    {"all, anjing, dog": "f54"},
+    {"all, rubah":"f55"},
+    {"all, burung, burung hantu": "f56"}
 ]
