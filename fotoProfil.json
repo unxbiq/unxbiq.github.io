@@ -22,7 +22,7 @@
     {"all": "f21"},
     {"all, anime":"f22"},
     {"all, naga, dragon, one piece": "f23"},
-    {"all, anime bertopeng kelinci": "f24"},
+    {"all, anime bertopeng kelinci, kelinci, topeng kelinci": "f24"},
     {"all":"f25"},
     {"all": "f26"},
     {"all, anime bermasker":"f27"},
@@ -54,5 +54,6 @@
     {"all, toleransi, sepasang kekasih, cinta beda keyakinan, muslim, islam, kristen, katholik": "f53"},
     {"all, anjing, dog": "f54"},
     {"all, rubah":"f55"},
-    {"all, burung, burung hantu": "f56"}
+    {"all, burung, burung hantu": "f56"},
+    {"all, anime bertopeng kelinci, kelinci, topeng kelinci": "f57"}
 ]
