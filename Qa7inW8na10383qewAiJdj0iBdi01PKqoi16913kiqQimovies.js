@@ -91,7 +91,7 @@ $(document).ready(function(){
       input.data('masked', false);
     } else {
       originalValue = input.val();
-      var maskedValue = originalValue.replace(/./g, ' ⚅ ');
+      var maskedValue = originalValue.replace(/./g, '☻');
       input.val(maskedValue);
       input.data('masked', true);
     }
