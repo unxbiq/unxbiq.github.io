@@ -5,11 +5,23 @@
   <meta name="keywords" content="UNXBIQ,SINUR4T,MAZE, avolia01">
   <meta name="author" content="Unxbiq">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
+<div class="item">
+  <h1>My Website</h1>
+  <p>Some text...UNXBIQ</p>
+</div>
 
-<h1>My Website</h1>
-<p>Some text...UNXBIQ</p>
+<script>
+  ScrollReveal({
+    reset: true,
+    distance: '60px',
+    duration: 2500,
+    delay: 100
+  });
 
+  ScrollReveal().reveal('.item h1', {delay: 500, origin: 'left'});
+</script>
 </body>
 </html>
