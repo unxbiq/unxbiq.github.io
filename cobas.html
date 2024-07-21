@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Photo Sharing Website</title>
+  <title>Photo Upload to GitHub</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <h1>Photo Sharing Website</h1>
+  <h1>Upload Photo to GitHub</h1>
   
   <form id="uploadForm">
     <input type="file" id="photoUpload" accept="image/*">
@@ -21,15 +21,27 @@
     $(document).ready(function() {
       $('#uploadForm').submit(function(e) {
         e.preventDefault();
+        
+        var file = $('#photoUpload')[0].files[0];
+        if (!file) {
+          alert('Please select a file.');
+          return;
+        }
+        
+        // Create FormData object
         var formData = new FormData();
-        formData.append('photo', $('#photoUpload')[0].files[0]);
+        formData.append('file', file);
+        
+        // GitHub repository and file path
+        var repo = 'unxbiq/unxbiq.github.io';
+        var filePath = 'ooi/' + file.name;
         
         // Example: Upload photo using AJAX to GitHub
         $.ajax({
-          url: 'https://api.github.com/repos/unxbiq/unxbiq.github.io/ooi/' + $('#photoUpload')[0].files[0].name,
+          url: 'https://api.github.com/repos/' + repo + '/contents/' + filePath,
           type: 'PUT',
           headers: {
-            Authorization: 'token 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',
+            Authorization: 'token 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', // Replace with your GitHub PAT
           },
           data: formData,
           contentType: false,
@@ -49,3 +61,6 @@
   </script>
 </body>
 </html>
+
+
+
