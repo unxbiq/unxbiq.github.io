@@ -38,7 +38,7 @@
         
         // Example: Upload photo using AJAX to GitHub
         $.ajax({
-          url: 'https://api.github.com/repos/' + repo + '/' + filePath,
+          url: 'https://api.github.com/repos/' + repo + '/contents/' + filePath,
           type: 'PUT',
           headers: {
             Authorization: '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', // Replace with your GitHub PAT
