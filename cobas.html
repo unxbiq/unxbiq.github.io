@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Sharing Website</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Photo Sharing Website</h1>
+  
+  <form id="uploadForm">
+    <input type="file" id="photoUpload" accept="image/*">
+    <button type="submit">Upload Photo</button>
+  </form>
+  
+  <div id="photoContainer">
+    <!-- Photo will be displayed here -->
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#uploadForm').submit(function(e) {
+        e.preventDefault();
+        var formData = new FormData();
+        formData.append('photo', $('#photoUpload')[0].files[0]);
+        
+        // Example: Upload photo using AJAX to GitHub
+        $.ajax({
+          url: 'https://api.github.com/repos/unxbiq/unxbiq.github.io/ooi/' + $('#photoUpload')[0].files[0].name,
+          type: 'PUT',
+          headers: {
+            Authorization: 'token <your_github_token>',
+          },
+          data: formData,
+          contentType: false,
+          processData: false,
+          success: function(data) {
+            var photoUrl = data.content.download_url;
+            $('#photoContainer').html('<img src="' + photoUrl + '" alt="Uploaded Photo">');
+            alert('Photo uploaded successfully! Link: ' + photoUrl);
+          },
+          error: function(err) {
+            console.error('Error uploading photo:', err);
+            alert('Failed to upload photo.');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
