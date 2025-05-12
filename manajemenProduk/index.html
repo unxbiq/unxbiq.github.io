@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Manajemen Produk</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+  <!-- FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+            rel="stylesheet"
+        />
+  <style>
+    body { font-family: "Outfit", sans-serif; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #424242; padding: 10px; text-align: center; }
+    td {
+      white-space: nowrap;
+    }
+    th { white-space: nowrap; background-color: #0eee; cursor: pointer; }
+    button { padding: 5px 10px; margin: 5px; }
+    .popup, .photo-popup, .barcode-popup {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); justify-content: center; align-items: center;
+      z-index: 1000;
+    }
+    .popup-content, .photo-content, .barcode-content {
+      background: white; padding: 20px; border-radius: 10px; text-align: center;
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    }
+    .popup-content { width: 300px; }
+    .photo-content { width: 90%; max-width: 600px; overflow: auto; }
+    .barcode-content { width: 80%; max-width: 600px; }
+    .foto-preview {
+      width: 50px; height: 50px; border-radius: 50%; background: #ccc;
+      object-fit: cover; cursor: pointer;
+    }
+    .photo-full, .barcode-full {
+      width: 100%; height: auto; max-height: 80vh; border-radius: 8px;
+      display: block; margin: 10px 10px; object-fit: contain;
+    }
+    #inputPencarian { margin: 5px 10px 10px 0; padding: 5px; width: 200px; }
+    #notFoundMark { color: red; margin-left: 5px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <button id="btnTambahProduk">TAMBAH PRODUK</button><br>
+  <input type="text" id="inputPencarian" placeholder="[ ? ]  NAMA PRODUK / 08/25">
+  <span id="notFoundMark"></span>  <table id="tabelProduk">
+    <thead>
+      <tr>
+        <th>NOMOR</th>
+        <th id="kolomNama">NAMA PRODUK</th>
+        <th>TANGGAL KADALUWARSA</th>
+        <th>FOTO PRODUK</th>
+        <th>BARCODE</th>
+        <th>AKSI</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>  <div class="popup" id="popupForm">
+    <div class="popup-content">
+      <h3>Tambah Produk</h3>
+      <input type="text" id="namaProduk" placeholder="NAMA PRODUK ?"><br><br>
+      <input type="text" id="tanggalKadaluarsa" placeholder="EXP : TGL/BLN/THN 17/08/25"><br><br>
+      <button id="btnSimpan">TAMBAHKAN</button>
+      <button id="btnBatal">BATAL</button>
+    </div>
+  </div>  <div class="photo-popup" id="popupFoto">
+    <div class="photo-content">
+      <img id="fotoBesar" class="photo-full" src="">
+      <button onclick="$('#popupFoto').fadeOut()">TUTUP</button>
+    </div>
+  </div>  <div class="barcode-popup" id="popupBarcode">
+    <div class="barcode-content">
+      <svg id="barcodeBesar" class="barcode-full"></svg>
+      <button onclick="$('#popupBarcode').fadeOut()">TUTUP</button>
+    </div>
+  </div>  <div class="popup" id="inputBarcodePopup">
+    <div class="popup-content">
+      <h3>Masukkan 12/13 digit</h3>
+      <input type="text" id="inputBarcode" maxlength="13" placeholder="MASUKKAN KODE BARCODE ?"><br><br>
+      <button onclick="$('#inputBarcodePopup').fadeOut()">BATAL</button>
+    </div>
+  </div>  <script>
+let db;
+const dbRequest = indexedDB.open("produkDB", 3);
+
+dbRequest.onupgradeneeded = function(e) {
+  db = e.target.result;
+  if (!db.objectStoreNames.contains("foto")) db.createObjectStore("foto", { keyPath: "id" });
+  if (!db.objectStoreNames.contains("barcode")) db.createObjectStore("barcode", { keyPath: "id" });
+};
+
+dbRequest.onsuccess = function(e) {
+  db = e.target.result;
+  muatTabel();
+};
+
+function simpanFoto(id, file, imgElemen) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const tx = db.transaction("foto", "readwrite");
+    tx.objectStore("foto").put({ id, data: e.target.result });
+    if (imgElemen) imgElemen.attr("src", e.target.result);
+  };
+  reader.readAsDataURL(file);
+}
+
+function ambilFoto(id, callback) {
+  const tx = db.transaction("foto", "readonly");
+  const req = tx.objectStore("foto").get(id);
+  req.onsuccess = () => callback(req.result ? req.result.data : null);
+}
+
+function simpanBarcode(id, angka) {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  JsBarcode(svg, angka.padEnd(13, "0"), { format: "ean13", width: 2, height: 50 });
+  const data = svg.outerHTML;
+  const tx = db.transaction("barcode", "readwrite");
+  tx.objectStore("barcode").put({ id, data });
+}
+
+function ambilBarcode(id, callback) {
+  const tx = db.transaction("barcode", "readonly");
+  const req = tx.objectStore("barcode").get(id);
+  req.onsuccess = () => callback(req.result ? req.result.data : null);
+}
+
+function tampilkanTabel(data) {
+  data.sort((a, b) => a.nama.localeCompare(b.nama));
+  const tbody = $("#tabelProduk tbody").empty();
+  if (data.length === 0) { $("#notFoundMark").text("?"); return; } else { $("#notFoundMark").text(""); }
+
+  data.forEach((item, index) => {
+    const tr = $("<tr>");
+    tr.append(`<td>${index + 1}</td>`);
+
+    const namaTd = $(`<td style="cursor:pointer">${item.nama}</td>`);
+    namaTd.on("click", function() {
+      const input = $('<input type="file" accept="image/*" style="display:none;">');
+      input.on("change", function() {
+        if (this.files[0]) simpanFoto(item.id, this.files[0], img);
+      }).click();
+    });
+
+    const img = $('<img class="foto-preview">');
+    ambilFoto(item.id, src => { img.attr("src", src || ""); });
+    img.on("click", () => {
+      ambilFoto(item.id, src => {
+        if (src) { $("#fotoBesar").attr("src", src); $("#popupFoto").fadeIn(); }
+      });
+    });
+
+    const barcodeCell = $("<td>");
+    const barcodeDiv = $("<div class='barcode-kecil'>belum ada!</div>");
+    const editBtn = $('<button>EDIT</button>');
+    editBtn.on("click", () => {
+      $('#inputBarcode').val('');
+      $('#inputBarcodePopup').fadeIn();
+      $('#inputBarcode').off('keydown').on('keydown', function(e) {
+        if (e.key === 'Enter') {
+          const val = this.value.trim();
+          if (!/^\d{12,13}$/.test(val)) return alert("Harus 12 atau 13 digit angka!");
+          simpanBarcode(item.id, val);
+          $('#inputBarcodePopup').fadeOut();
+          muatTabel();
+        }
+      });
+    });
+    ambilBarcode(item.id, svg => {
+      if (svg) {
+        const barcodeEl = $(svg).css({ width: '100%', height: '50px', cursor: 'pointer' });
+        barcodeEl.on("click", () => {
+          $("#barcodeBesar").html(svg);
+          $("#popupBarcode").fadeIn();
+        });
+        barcodeDiv.empty().append(barcodeEl);
+      }
+    });
+    barcodeCell.append(barcodeDiv).append(editBtn);
+
+    tr.append(namaTd);
+    tr.append(`<td>${item.tanggal}</td>`);
+    tr.append($("<td>").append(img));
+    tr.append(barcodeCell);
+
+    const hapusBtn = $('<button>HAPUS</button>').on("click", function() {
+      let semua = JSON.parse(localStorage.getItem("produkList")) || [];
+      semua = semua.filter(p => p.id !== item.id);
+      localStorage.setItem("produkList", JSON.stringify(semua));
+      db.transaction("foto", "readwrite").objectStore("foto").delete(item.id);
+      db.transaction("barcode", "readwrite").objectStore("barcode").delete(item.id);
+      muatTabel();
+    });
+    tr.append($("<td>").append(hapusBtn));
+    tbody.append(tr);
+  });
+}
+
+function muatTabel() {
+  const semua = JSON.parse(localStorage.getItem("produkList")) || [];
+  tampilkanTabel(semua);
+}
+
+$("#btnTambahProduk").on("click", () => {
+  $("#namaProduk").val("");
+  $("#tanggalKadaluarsa").val("");
+  $("#popupForm").fadeIn();
+});
+
+$("#btnBatal").on("click", () => $("#popupForm").fadeOut());
+
+$("#btnSimpan").on("click", () => {
+  const nama = $("#namaProduk").val().trim();
+  const tanggal = $("#tanggalKadaluarsa").val().trim();
+  if (!nama || !tanggal) return alert("Semua kolom wajib diisi!");
+
+  let semua = JSON.parse(localStorage.getItem("produkList")) || [];
+  const duplikat = semua.some(p => p.nama === nama && p.tanggal === tanggal);
+  if (duplikat) return alert("Nama dan tanggal kadaluarsa sudah dipakai bersamaan!");
+
+  const id = Date.now().toString();
+  semua.push({ id, nama, tanggal });
+  localStorage.setItem("produkList", JSON.stringify(semua));
+  muatTabel();
+  $("#popupForm").fadeOut();
+});
+
+$("#inputPencarian").on("keydown", function(e) {
+  if (e.key === "Enter") {
+    const input = $(this).val().trim().toLowerCase();
+    let semua = JSON.parse(localStorage.getItem("produkList")) || [];
+    if (!input) return tampilkanTabel(semua);
+
+    const hasil = semua.filter(p => {
+      const bagianTanggal = p.tanggal.split("/");
+      const bulanTahun = bagianTanggal[1] + "/" + bagianTanggal[2];
+      const cocokTanggal = input === bulanTahun;
+      const namaProduk = p.nama.toLowerCase();
+      const cocokNama = namaProduk.split(/[^a-z0-9]+/).some(kata => kata === input) || namaProduk.includes(input + " ");
+      return cocokTanggal || cocokNama;
+    });
+    tampilkanTabel(hasil);
+  }
+});
+  </script></body>
+</html>
