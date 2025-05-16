@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Manajemen Produk</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+            rel="stylesheet"
+        />
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 20px;
+      background: #f0f4f8;
+      color: #333;
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    #searchInput {
+      width: 220px;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #tambahBtn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #tambahBtn:hover { background-color: #0056b3; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      white-space: nowrap;
+    }
+    th { background-color: #007bff; color: white; }
+    tbody tr:nth-child(odd) { background-color: #f2f8ff; }
+    tbody tr:hover { background-color: #dbeeff; }
+    td button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    td button:hover { background-color: #a71d2a; }
+    .popup, .kode-popup {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      z-index: 10;
+      display: none;
+      width: 320px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      border-radius: 6px;
+    }
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      z-index: 5;
+    }
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      color: #900;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 6px 8px;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+    #submitProduk {
+      margin-top: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #submitProduk:hover { background-color: #1e7e34; }
+    #notFound {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .copy-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header-bar">
+  <input type="text" id="searchInput" placeholder="Cari nama produk atau MM/YY">
+  <button id="tambahBtn">TAMBAH PRODUK</button>
+</div>
+
+<div class="overlay"></div>
+
+<div class="popup" id="popupForm">
+  <span class="close-btn" id="closePopup">×</span>
+  <h3>Tambah Produk</h3>
+  <label>Nama Produk:
+    <input type="text" id="namaProdukInput">
+    <span class="error" id="namaError" style="display:none;">?</span>
+  </label><br><br>
+  <label>Tanggal Kadaluwarsa (DD/MM/YY):
+    <input type="text" id="tglExpInput" placeholder="17/08/25">
+    <span class="error" id="tglError" style="display:none;">!</span>
+  </label><br><br>
+  <button id="submitProduk">TAMBAHKAN</button>
+</div>
+
+<div class="kode-popup" id="popupKode">
+  <span class="close-btn" id="closeKode">×</span>
+  <h3>Masukkan 13 Digit Kode EAN-13</h3>
+  <input type="text" id="kodeInput" maxlength="13" placeholder="Contoh: 1234567890123">
+</div>
+
+<table id="produkTable">
+  <thead>
+    <tr>
+      <th>NOMOR</th>
+      <th>NAMA PRODUK</th>
+      <th>TANGGAL KADALUWARSA</th>
+      <th>KODE</th>
+      <th>AKSI</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<div id="notFound" style="display:none;">PRODUK TIDAK DITEMUKAN...</div>
+
+<script>
+  const key = 'produkList';
+  let currentKodeNama = '', currentKodeTgl = '';
+
+  function getProdukList() {
+    const data = localStorage.getItem(key);
+    try {
+      const list = JSON.parse(data);
+      return Array.isArray(list) ? list : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveProdukList(list) {
+    localStorage.setItem(key, JSON.stringify(list));
+  }
+
+  function renderTable(filter = '') {
+    const list = getProdukList();
+    let hasil = list;
+
+    if (filter.trim()) {
+      const keyword = filter.trim().toLowerCase();
+      const isTanggal = /^\d{2}\/\d{2}$/.test(keyword);
+      if (isTanggal) {
+        hasil = list.filter(p => {
+          const bagian = p.tanggal.split('/');
+          return bagian[1] + '/' + bagian[2] === keyword;
+        });
+      } else {
+        const regex = new RegExp(`\\b${keyword}`, 'i');
+        hasil = list.filter(p => regex.test(p.nama));
+      }
+    }
+
+    hasil.sort((a, b) => a.nama.toLowerCase().localeCompare(b.nama.toLowerCase()));
+    const tbody = $('#produkTable tbody');
+    tbody.empty();
+
+    if (hasil.length === 0) {
+      $('#notFound').show();
+    } else {
+      $('#notFound').hide();
+      hasil.forEach((item, index) => {
+        const kode = item.kode || "BELUM ADA...";
+        const row = `<tr>
+          <td>${index + 1}</td>
+          <td style="max-width: 300px;">${item.nama}</td>
+          <td>${item.tanggal}</td>
+          <td>
+            <span class="kode-text" data-nama="${item.nama}" data-tgl="${item.tanggal}" style="cursor:pointer;color:#007bff;">${kode}</span>
+            <button class="copy-btn" data-kode="${kode}">📋</button>
+          </td>
+          <td><button class="hapusBtn" data-nama="${item.nama}" data-tanggal="${item.tanggal}">HAPUS</button></td>
+        </tr>`;
+        tbody.append(row);
+      });
+    }
+  }
+
+  function showPopup() {
+    $('#namaProdukInput').val('');
+    $('#tglExpInput').val('');
+    $('#namaError, #tglError').hide();
+    $('.overlay, #popupForm').fadeIn();
+  }
+
+  function hidePopup() {
+    $('.overlay, .popup, .kode-popup').fadeOut();
+  }
+
+  $('#tambahBtn').click(showPopup);
+  $('#closePopup, #closeKode, .overlay').click(hidePopup);
+
+  $('#submitProduk').click(() => {
+    const nama = $('#namaProdukInput').val().trim();
+    const tanggal = $('#tglExpInput').val().trim();
+
+    $('#namaError').toggle(!nama);
+    $('#tglError').toggle(!tanggal);
+    if (!nama || !tanggal) return;
+
+    const list = getProdukList();
+    const isDuplicate = list.some(p =>
+      p.nama.toLowerCase() === nama.toLowerCase() && p.tanggal === tanggal);
+    if (isDuplicate) return;
+
+    list.push({ nama, tanggal });
+    saveProdukList(list);
+    renderTable();
+    hidePopup();
+  });
+
+  $('#produkTable').on('click', '.hapusBtn', function () {
+    const nama = $(this).data('nama');
+    const tanggal = $(this).data('tanggal');
+    let list = getProdukList();
+    list = list.filter(p => !(p.nama === nama && p.tanggal === tanggal));
+    saveProdukList(list);
+    renderTable($('#searchInput').val());
+  });
+
+  $('#produkTable').on('click', '.kode-text', function () {
+    currentKodeNama = $(this).data('nama');
+    currentKodeTgl = $(this).data('tgl');
+    $('#kodeInput').val('');
+    $('.overlay, #popupKode').fadeIn();
+  });
+
+  $('#kodeInput').keypress(function (e) {
+    if (e.which === 13) {
+      const kode = $(this).val().trim();
+      if (!/^\d{13}$/.test(kode)) return;
+      const list = getProdukList();
+      const idx = list.findIndex(p => p.nama === currentKodeNama && p.tanggal === currentKodeTgl);
+      if (idx !== -1) {
+        list[idx].kode = kode;
+        saveProdukList(list);
+        renderTable($('#searchInput').val());
+        hidePopup();
+      }
+    }
+  });
+
+  $('#produkTable').on('click', '.copy-btn', function () {
+    const kode = $(this).data('kode');
+    if (kode !== "BELUM ADA...") {
+      navigator.clipboard.writeText(kode).then(() => {
+        /* alert("Kode disalin!");*/
+      });
+    }
+  });
+
+  $('#searchInput').on('keypress', function (e) {
+    if (e.which === 13) {
+      const keyword = $(this).val();
+      renderTable(keyword);
+    }
+  });
+
+  $(document).ready(() => renderTable());
+</script>
+
+</body>
+</html>
